@@ -14,7 +14,7 @@ SET_NAME_MAPPING = {
 }
 
 def load_card_database():
-    """Load the combined JSON file and create a lookup dictionary."""
+    #Load the combined JSON file and create a lookup dictionary
     script_dir = os.path.dirname(os.path.abspath(__file__))  # Get script directory
     json_path = os.path.join(script_dir, "card_data.json")  # Full path to JSON
 
@@ -34,7 +34,7 @@ def load_card_database():
 CARD_DATABASE = load_card_database()
 
 def get_cards(url):
-    """Extracts wanted and tradable cards from a given profile URL."""
+    #Extracts wanted and tradable cards from a given profile URL
 
     response = requests.get(url)
     if response.status_code != 200:
@@ -105,7 +105,7 @@ def find_matches():
         f.write(my_url)
 
 def load_saved_profile():
-    """Load the saved user profile URL if available."""
+    #Load the saved user profile URL if available
     if os.path.exists("user_profile.txt"):
         with open("user_profile.txt", "r") as f:
             return f.read().strip()
